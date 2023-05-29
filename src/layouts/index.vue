@@ -22,8 +22,9 @@ defineProps();
   min-height: 100vh;
   align-items: stretch;
 }
+
 .content-layout {
   flex: 1;
-  background-color: yellow;
+  /* background-color: ; */
 }
 </style>

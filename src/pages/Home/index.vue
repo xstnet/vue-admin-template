@@ -1,6 +1,7 @@
 <script setup lang="ts">
-interface IProps {}
+interface IProps { }
 const props = defineProps<IProps>();
+
 </script>
 
 <template></template>
