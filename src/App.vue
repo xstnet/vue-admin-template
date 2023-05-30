@@ -3,7 +3,7 @@ import Layout from '@/layouts/index.vue';
 </script>
 
 <template>
-  <Layout />
+  <router-view></router-view>
 </template>
 
 <style scoped></style>

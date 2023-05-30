@@ -5,7 +5,7 @@ const props = defineProps<IProps>();
 </script>
 
 <template>
-    <div>home</div>
+    <div>exam</div>
 </template>
 
 <style scoped lang="scss"></style>

@@ -1,6 +1,6 @@
 <script setup name="MenuItem" lang="ts">
 import SvgIcon from '@/components/SvgIcon.vue';
-import { MenuProps } from '../index.vue';
+import { MenuProps } from '@/store/menu';
 
 interface IProps {
   menus: MenuProps[];

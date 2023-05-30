@@ -3,11 +3,13 @@ defineProps();
 </script>
 
 <template>
-  <el-main>Main</el-main>
+  <div class="content">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style scoped>
-.header {
-  width: 100%;
+.content {
+  padding: 16px 24px;
 }
 </style>
