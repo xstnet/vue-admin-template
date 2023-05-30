@@ -1,4 +1,5 @@
 import Layout from '@/layouts/index.vue';
+import NotFound from '@/pages/Error/NotFound.vue';
 import Login from '@/pages/Login/index.vue';
 import Home from '@/pages/Home/index.vue';
 import Exam from '@/pages/Exam/index.vue';
@@ -21,6 +22,11 @@ export const routes = [
       {
         path: '/exam',
         component: Exam
+      },
+      {
+        path: '/:404(.*)*',
+        name: 'NotFound',
+        component: NotFound
       }
     ]
   }

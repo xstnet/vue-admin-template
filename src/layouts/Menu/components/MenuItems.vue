@@ -16,7 +16,7 @@ const { menus } = defineProps<IProps>();
           <SvgIcon v-if="menu.icon" :name="menu.icon" /> {{ menu.label }}
         </span>
       </template>
-      <MenuItem :menus="menu.children" />
+      <MenuItems :menus="menu.children" />
     </el-sub-menu>
 
     <el-menu-item v-else :index="menu.path">

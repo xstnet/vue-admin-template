@@ -1,7 +1,7 @@
 {
-  "name": "my-vue-app",
+  "name": "study-platform",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,6 +18,7 @@
   "devDependencies": {
     "@types/node": "^20.2.4",
     "@vitejs/plugin-vue": "^4.1.0",
+    "prettier": "^2.8.8",
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",

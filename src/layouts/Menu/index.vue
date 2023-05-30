@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMenuStore } from '@/store';
-import MenuItem from './components/MenuItem.vue';
+import MenuItems from './components/MenuItems.vue';
 import { storeToRefs } from 'pinia';
 const menuStore = useMenuStore();
 const { menus } = storeToRefs(menuStore);
@@ -10,7 +10,7 @@ const { menus } = storeToRefs(menuStore);
 <template>
   <el-aside width="210px" class="menu-container">
     <el-menu router default-active="/" class="menu">
-      <MenuItem :menus="menus" />
+      <MenuItems :menus="menus" />
     </el-menu>
   </el-aside>
 </template>

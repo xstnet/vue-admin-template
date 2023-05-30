@@ -1,11 +1,10 @@
 <script setup lang="ts">
 interface IProps { }
-const props = defineProps<IProps>();
 
 </script>
 
 <template>
-    234
+    404
 </template>
 
 <style scoped lang="scss"></style>

@@ -6,6 +6,7 @@ specifiers:
   axios: ^1.4.0
   element-plus: ^2.3.5
   pinia: ^2.1.3
+  prettier: ^2.8.8
   sass: ^1.62.1
   typescript: ^5.0.2
   vite: ^4.3.2
@@ -23,6 +24,7 @@ dependencies:
 devDependencies:
   '@types/node': registry.npmmirror.com/@types/node/20.2.4
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/4.2.3_vite@4.3.8+vue@3.3.4
+  prettier: registry.npmmirror.com/prettier/2.8.8
   sass: registry.npmmirror.com/sass/1.62.1
   typescript: registry.npmmirror.com/typescript/5.0.4
   vite: registry.npmmirror.com/vite/4.3.8_6yc4l5ajb3qu7t4qkm6jmqe2ci
@@ -1000,6 +1002,14 @@ packages:
       nanoid: registry.npmmirror.com/nanoid/3.3.6
       picocolors: registry.npmmirror.com/picocolors/1.0.0
       source-map-js: registry.npmmirror.com/source-map-js/1.0.2
+
+  registry.npmmirror.com/prettier/2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/prettier/-/prettier-2.8.8.tgz}
+    name: prettier
+    version: 2.8.8
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
 
   registry.npmmirror.com/proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz}

@@ -4,6 +4,7 @@ import Layout from '@/layouts/index.vue';
 
 <template>
   <router-view></router-view>
+  <Layout a="22221" :b="2" />
 </template>
 
 <style scoped></style>
