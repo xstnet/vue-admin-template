@@ -24,7 +24,7 @@ function getString(k: string): string | null {
 
 // quick function
 function getToken() {
-  getString(Config.tokenKey);
+  return getString(Config.tokenKey);
 }
 
 function getNumber(k: string): number | undefined {

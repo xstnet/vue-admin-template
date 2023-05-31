@@ -1,13 +1,25 @@
 import { defineStore } from 'pinia';
 
+interface UserInfo {
+  id: N;
+  username: S;
+  nickname: S;
+  avatar: S;
+  mobile: S;
+  email: S;
+  gender: N;
+  company_id: N;
+}
+interface State {
+  userInfo: UserInfo | null;
+}
+
 export const useUserInfoStore = defineStore('user', {
-  state: () => ({ count: 0 }),
-  getters: {
-    double: (state) => state.count * 2
-  },
+  state: (): State => ({ userInfo: null }),
+  getters: {},
   actions: {
-    increment() {
-      this.count++;
+    setUserInfo(userInfo: UserInfo) {
+      this.userInfo = userInfo;
     }
   }
 });
