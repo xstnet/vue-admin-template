@@ -10,20 +10,23 @@ const { menus } = defineProps<IProps>();
 
 <template>
   <template v-for="menu in menus">
-    <el-sub-menu v-if="menu.children && menu.children.length > 0" :index="menu.path">
-      <template #title>
+    <template v-if="!menu?.hiddeInMenu">
+      <el-sub-menu v-if="menu.children && menu.children.length > 0" :index="menu.path">
+        <template #title>
+          <span class="menu-title">
+            <SvgIcon v-if="menu.icon" :name="menu.icon" /> {{ menu.label }}
+          </span>
+        </template>
+        <MenuItems :menus="menu.children" />
+      </el-sub-menu>
+
+      <el-menu-item v-else :index="menu.path">
         <span class="menu-title">
           <SvgIcon v-if="menu.icon" :name="menu.icon" /> {{ menu.label }}
         </span>
-      </template>
-      <MenuItems :menus="menu.children" />
-    </el-sub-menu>
+      </el-menu-item>
+    </template>
 
-    <el-menu-item v-else :index="menu.path">
-      <span class="menu-title">
-        <SvgIcon v-if="menu.icon" :name="menu.icon" /> {{ menu.label }}
-      </span>
-    </el-menu-item>
   </template>
 </template>
 

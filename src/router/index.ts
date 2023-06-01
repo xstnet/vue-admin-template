@@ -1,27 +1,24 @@
 import Layout from '@/layouts/index.vue';
 import NotFound from '@/pages/Error/NotFound.vue';
-import Login from '@/pages/Login/index.vue';
-import Home from '@/pages/Home/index.vue';
-import Exam from '@/pages/Exam/index.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 export const routes = [
-  { path: '/login', component: Login },
+  { path: '/login', component: import('@/pages/Login/index.vue') },
   {
     path: '/',
     component: Layout,
     children: [
       {
         path: '',
-        component: Home
+        component: import('@/pages/Home/index.vue')
       },
       {
         path: '/home',
-        component: Home
+        component: import('@/pages/Home/index.vue')
       },
       {
         path: '/exam',
-        component: Exam
+        component: import('@/pages/Exam/index.vue')
       },
       {
         path: '/:404(.*)*',
