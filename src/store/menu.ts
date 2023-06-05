@@ -33,11 +33,11 @@ const initMenus: MenuProps[] = [
   {
     label: '课程管理',
     icon: 'course',
-    path: '/course',
+    path: '/course/',
     children: [
-      { label: '课程列表', path: '/course/list' },
+      { label: '课程列表', path: '/course' },
       { label: '课程分类', path: '/course/category' },
-      { label: '素材中心', path: '/course/material' }
+      { label: '素材中心', path: '/course/attachment' }
     ]
   },
   {

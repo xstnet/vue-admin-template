@@ -6,19 +6,44 @@ export const routes = [
   { path: '/login', component: import('@/pages/Login/index.vue') },
   {
     path: '/',
+    name: '首页',
     component: Layout,
     children: [
       {
         path: '',
+        name: '首页',
         component: import('@/pages/Home/index.vue')
       },
       {
         path: '/home',
+        name: '首页',
         component: import('@/pages/Home/index.vue')
       },
       {
         path: '/exam',
+        name: '考试管理',
         component: import('@/pages/Exam/index.vue')
+      },
+      {
+        path: '/course',
+        name: '课程管理',
+        children: [
+          {
+            name: '课程列表',
+            path: '',
+            component: import('@/pages/Course/Index/index.vue')
+          },
+          {
+            name: '素材中心',
+            path: '/course/attachment',
+            component: import('@/pages/Course/Attachment/index.vue')
+          },
+          {
+            name: '课程分类',
+            path: '/course/category',
+            component: import('@/pages/Course/Category/index.vue')
+          }
+        ]
       },
       {
         path: '/:404(.*)*',

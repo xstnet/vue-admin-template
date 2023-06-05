@@ -7,11 +7,13 @@ defineProps();
 <template>
   <el-header class="header">
     <div class="left">
-      <div class="logo">logo</div>
-      <div class="title-wrap">
-        <div class="primary-title">智慧教学平台</div>
-        <div class="secondary-title">企业版</div>
-      </div>
+      <router-link to="/" class="home-link">
+        <div class="logo"></div>
+        <div class="title-wrap">
+          <div class="primary-title">智慧教学平台</div>
+          <div class="secondary-title">企业版</div>
+        </div>
+      </router-link>
     </div>
     <div class="right">
       <div class="action-icon">
@@ -40,30 +42,41 @@ defineProps();
   .left {
     display: flex;
 
-    .logo {
-      margin: 0 10px;
-    }
-
-    .title-wrap {
+    .home-link {
+      cursor: pointer;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      text-decoration: none;
 
-      .primary-title {
-        font-family: "STYuanti-SC-Bold", "STYuanti-SC";
-        color: #3B4153;
-        font-size: 16px;
-        line-height: 16px;
+      .logo {
+        margin: 0 10px 0 0;
+        background: url('@/assets/images/logo.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
       }
 
-      .secondary-title {
-        margin-top: 5px;
-        font-family: STYuanti-SC-Regular, STYuanti-SC;
-        color: rgba(121, 125, 138, 1);
-        font-size: 12px;
-        line-height: 12px;
+      .title-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .primary-title {
+          font-family: "STYuanti-SC-Bold", "STYuanti-SC";
+          color: #3B4153;
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        .secondary-title {
+          margin-top: 5px;
+          font-family: STYuanti-SC-Regular, STYuanti-SC;
+          color: rgba(121, 125, 138, 1);
+          font-size: 12px;
+          line-height: 12px;
+        }
       }
     }
+
   }
 
   .right {
