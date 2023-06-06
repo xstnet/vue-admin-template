@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight } from '@element-plus/icons-vue'
-import { ref, watch } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -24,17 +24,8 @@ const makeBreadcrumbs = (): Breadcrumb[] => {
     return breadcrumbs;
 }
 
-const breadcrumbs = ref<Breadcrumb[]>(makeBreadcrumbs());
+const breadcrumbs = computed(() => makeBreadcrumbs());
 
-
-
-watch(route, () => {
-    breadcrumbs.value = makeBreadcrumbs();
-})
-
-function watchEffect() {
-    throw new Error('Function not implemented.');
-}
 </script>
 
 <template>

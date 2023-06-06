@@ -1,3 +1,8 @@
 declare namespace Api {
-  namespace Course {}
+  namespace Course {
+    interface GetCourseList extends Base {
+      params: PaginateParams;
+      response: { paper_id: N };
+    }
+  }
 }

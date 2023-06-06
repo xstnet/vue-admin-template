@@ -4,7 +4,7 @@ defineProps();
 </script>
 
 <template>
-  <div>
+  <div style="width: 100%;">
     <Breadcrumb />
     <div class="content">
       <router-view></router-view>

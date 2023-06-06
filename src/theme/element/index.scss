@@ -1,0 +1,42 @@
+$--colors: (
+  'primary': (
+    'base': #12bfaf
+  ),
+  'success': (
+    'base': #21ba45
+  ),
+  'warning': (
+    'base': #ff6010
+  ),
+  'danger': (
+    'base': #ff3b30
+  ),
+  'error': (
+    'base': #ff3b30
+  ),
+  'info': (
+    'base': #3076ef
+  )
+);
+
+// we can add this to custom namespace, default is 'el'
+@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: 'el'
+);
+
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // do not use same name, it will override.
+  $colors: $--colors,
+  $bg-color: ('': #ffffff, 'page': #f2f3f5, 'overlay': #ffffff)
+);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+// custom dark variables
+@use './dark.scss';

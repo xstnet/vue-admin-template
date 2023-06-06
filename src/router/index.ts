@@ -34,6 +34,26 @@ export const routes = [
             component: import('@/pages/Course/Index/index.vue')
           },
           {
+            name: '创建图文课程',
+            path: '/course/create/text',
+            component: import('@/pages/Course/Attachment/index.vue')
+          },
+          {
+            name: '创建音频课程',
+            path: '/course/create/audio',
+            component: import('@/pages/Course/Attachment/index.vue')
+          },
+          {
+            name: '创建视频课程',
+            path: '/course/create/video',
+            component: import('@/pages/Course/Attachment/index.vue')
+          },
+          {
+            name: '创建综合课程',
+            path: '/course/create/composite',
+            component: import('@/pages/Course/Attachment/index.vue')
+          },
+          {
             name: '素材中心',
             path: '/course/attachment',
             component: import('@/pages/Course/Attachment/index.vue')

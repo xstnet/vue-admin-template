@@ -13,8 +13,8 @@ namespace Api {
 
   // 分页参数
   interface PaginateParams {
-    current?: N;
-    pageSize?: N;
+    page?: N;
+    page_size?: N;
   }
 
   interface PaginateResponse<T> {
