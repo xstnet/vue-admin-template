@@ -29,7 +29,8 @@ $--colors: (
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   // do not use same name, it will override.
   $colors: $--colors,
-  $bg-color: ('': #ffffff, 'page': #f2f3f5, 'overlay': #ffffff)
+  $bg-color: ('': #ffffff, 'page': #f2f3f5, 'overlay': #ffffff),
+  $table: ('header-bg-color': #f7f7f9)
 );
 
 // if you want to import all

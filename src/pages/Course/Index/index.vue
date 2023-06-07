@@ -1,73 +1,13 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import CreateCourseButton from './components/CreateCourseButton.vue';
+
 import { getCourseList } from '@/api/course';
 
-interface IProps { }
 
-const tableData = [
-    {
-        id: 1,
-        start_time: '2016-05-03',
-        name: 'React 从入门到精通',
-        type: '综合课',
-        status: 100,
-        credit: 100,
-        teacher: {
-            id: 1,
-            name: '张三'
-        },
-        cover: 'https://i0.hdslb.com/bfs/archive/3086cba16f49bec40a765e2320436b3b18b0bc86.jpg@672w_378h_1c_!web-search-common-cover.webp'
-    },
-    {
-        id: 2,
-        start_time: '2016-05-03',
-        name: 'WebSocket是什么', status: 100,
-        type: '图文课',
-        credit: 100,
-        teacher: {
-            id: 1,
-            name: '张三'
-        },
-        cover: 'https://i2.hdslb.com/bfs/archive/12a888dd9f2fb64ce1d32fb075e6e49ffbcd6ea1.jpg@672w_378h_1c_!web-search-common-cover.webp'
-    },
-    {
-        id: 2,
-        start_time: '2016-05-03',
-        name: 'OAuth2.0介绍', status: 100,
-        type: '图文课',
-        credit: 100,
-        teacher: {
-            id: 1,
-            name: '张三'
-        },
-        cover: 'https://i2.hdslb.com/bfs/archive/b0fd51d2bbe22d17d694dceb99b879e4eb1f4fde.jpg@672w_378h_1c_!web-search-common-cover.webp'
-    },
-    {
-        id: 2,
-        start_time: '2016-05-03',
-        name: 'Vue3入门', status: 100,
-        type: '视频课',
-        credit: 100,
-        teacher: {
-            id: 1,
-            name: '张三'
-        },
-        cover: 'https://i0.hdslb.com/bfs/legacy/660382cf331217801d2d659050a32040151fabd3.png@672w_378h_1c_100q_!web-search-common-cover.webp'
-    },
-    {
-        id: 2, status: 100,
-        start_time: '2017-05-03',
-        name: 'TCP和UDP的区别',
-        type: '视频课',
-        credit: 100,
-        teacher: {
-            id: 1,
-            name: '张三'
-        },
-        cover: 'https://i2.hdslb.com/bfs/archive/1de112ab58dd55fd950ed2854d2b53417c95b4b5.jpg@672w_378h_1c_!web-search-common-cover.webp'
-    },
-]
+const searchForm = reactive({
+    name: '',
+    category_id: 0,
+})
 
 
 
@@ -75,32 +15,32 @@ const tableData = [
 
 <template>
     <div class="course-list">
-        <!-- <el-table :data="tableData" type="selection" :row-key="(row) => row.id">
-            <el-table-column type="selection" width="40" />
-            <el-table-column prop="id" label="ID" width="50" />
-            <el-table-column prop="cover" label="封面" width="160">
-                <template #default="scope" column>
-                    <div>
-                        <el-image :src="scope.row.cover" referrerpolicy="no-referrer" />
-                    </div>
-                </template>
-            </el-table-column>
-            <el-table-column prop="name" label="课程名称" width="180" />
-            <el-table-column prop="type" label="课程类型" width="100" />
-            <el-table-column prop="teacher.name" label="讲师" width="80" />
-            <el-table-column prop="credit" label="学分" width="100" />
-            <el-table-column prop="start_time" label="上架时间" width="120" />
-            <el-table-column prop="status" label="状态" width="100" />
-            <el-table-column fixed="right" label="操作">
-                <template #default>
-                    <el-button link type="primary" size="small">编辑</el-button>
-                    <el-button link type="danger" size="small">删除</el-button>
-                </template>
-            </el-table-column>
-        </el-table> -->
+
+        <pro-table :request="getCourseList" :searchFormModel="searchForm" title="课程列表">
+            <template #searchForm="{ handleQuery }">
+                <el-form :model="searchForm">
+                    <el-row :gutter="24">
+                        <el-col :span="6">
+                            <el-form-item label="课程名称" prop="user">
+                                <el-input v-model="searchForm.name" placeholder="输入课程名称" />
+                            </el-form-item>
+                        </el-col>
 
 
-        <pro-table :request="getCourseList">
+                        <el-col :span="6">
+                            <el-form-item label="课程分类">
+                                <el-select v-model="searchForm.category_id" placeholder="选择分类">
+                                    <el-option label="临床医学" value="shanghai" />
+                                    <el-option label="外科" value="beijing" />
+                                </el-select>
+                            </el-form-item>
+                        </el-col> <el-col :span="6" style="text-align: right;">
+                            <el-button>重置</el-button>
+                            <el-button type="primary" @click="handleQuery">查询</el-button>
+                        </el-col>
+                    </el-row>
+                </el-form>
+            </template>
             <el-table-column type="selection" width="40" />
             <el-table-column prop="id" label="ID" width="50" />
             <el-table-column prop="cover" label="封面" width="160">

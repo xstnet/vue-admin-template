@@ -1,6 +1,8 @@
 import { Http } from '@/utils/http';
 
 export const getCourseList = <T extends Api.Base = Api.Course.GetCourseList>(params?: T) => {
+  console.log('pppppppppp', params);
+
   return Http.get<Api.PaginateResponse<T>>('/course/list', params);
 };
 
